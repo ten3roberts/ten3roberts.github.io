@@ -14,17 +14,27 @@
   </head>
   <body class="bg-dark text-white">
     <header class="container">
-      <h1 class="pt-5 text-center">Tej Roberts</h1>
-      <p class="pt-2 text-center">A personal blog containing projects I've developed over the years.</p>
+      <h1 class="mt-5 text-center">Tej Roberts</h1>
+      <p class="mt-2 text-center">A personal blog containing projects I've developed over the years.</p>
     </header>
 
     <nav class="navbar navbar-expand-sm bg-dark justify-content-center">
       <div class="container-fluid justify-content-center">
         <ul class="navbar-nav">
-          <li class="sep"> <button class="block-button " onclick="goto('https://github.com/ten3roberts')">Github</button> </li>
-          <li class="sep"> <button class="block-button " onclick="goto('https://gitlab.com/ten3roberts')">Gitlab</button> </li>
-          <li class="sep"> <button class="block-button " onclick="goto('html/about.html')">About</button> </li>
-          <li class="sep"> <button class="block-button " onclick="goto('html/projects.html')">Projects</button> </li>
+          <li class="sep"> <button class="block-button" onclick="goto('html/about.html')">About</button> </li>
+          <li class="sep"> <button class="block-button" onclick="goto('html/projects.html')">Projects</button> </li>
+          <li class="sep">
+            <button class="block-button" onclick="goto('https://github.com/ten3roberts')">
+              <img src="img/GitHub-Mark/PNG/GitHub-Mark-Light-64px.png" class="icon"/>
+              Github
+            </button>
+          </li>
+          <li class="sep">
+            <button class="block-button " onclick="goto('https://gitlab.com/ten3roberts')">
+              <img src="https://about.gitlab.com/images/icons/logos/slp-icon.svg" class="icon"/>
+              Gitlab
+            </button>
+          </li>
         </ul>
       </div>
     </nav>
@@ -32,11 +42,12 @@
     <div class="container" id="projects">
 
     </div>
-    <footer class="pt-5">
+    <footer class="mt-5">
       <div class="justify-content-center container-fluid">
         <p class="text-center"> Email: </p>
         <a class="justify-content-center" href="mailto:ten3roberts@gmail.com"><p class="text-center">ten3roberts@gmail.com</p></a>
       </div>
     </footer>
+    <script src="js/projects.js"></script>
   </body>
 </html>

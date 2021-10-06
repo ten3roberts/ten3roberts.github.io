@@ -6,6 +6,12 @@ h2 {
   font-family: 'Courier New', Courier, monospace;
   font-weight: normal;
 }
+
+h3 {
+  font-family: 'Courier New', Courier, monospace;
+  margin-top: 1em;
+}
+
 a {
   color: var(--bs-secondary)
 }
@@ -18,7 +24,28 @@ nav {
   border-bottom: 1px solid;
 }
 
+article {
+  border-bottom: 1px solid;
+}
+
 /* Classes */
+
+.inline-block {
+  display: inline-block;
+}
+
+.icon {
+  display: inline-block;
+  height: 1em;
+/* height: 100%; */
+  width: auto;
+}
+
+.large-icon {
+  display: inline-block;
+  height: 3em;
+  width: auto;
+}
 
 .block-button {
   padding: 0.5em 1em;
@@ -31,6 +58,7 @@ nav {
 
 .block-button:hover {
   background-color: var(--bs-purple);
+  animation-duration: 100ms;
 }
 
 /* Separators between elements */
