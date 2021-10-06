@@ -1,10 +1,28 @@
-h2 {
-  font-family: "Roboto Mono";
-  font-weight: normal;
+body {
+  font-family: "Open Sans", sans-serif;
 }
 
+h2 {
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: normal;
+}
+a {
+  color: var(--bs-secondary)
+}
+
+a:hover {
+  color: var(--bs-blue)
+}
+
+nav {
+  border-bottom: 1px solid;
+}
+
+/* Classes */
+
 .block-button {
-  padding: 1em 2em;
+  padding: 0.5em 1em;
+  font-size: 1.25em;
   border: none;
   background-color: inherit;
   color: inherit;
@@ -14,3 +32,12 @@ h2 {
 .block-button:hover {
   background-color: var(--bs-purple);
 }
+
+/* Separators between elements */
+/* .sep::after { */
+/*   content: "|"; */
+/* } */
+
+/* .sep:last-child::after { */
+/*   content: "" */
+/* } */
