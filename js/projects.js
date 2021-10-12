@@ -4,7 +4,8 @@ let projects = [
     description:
       "Modular game engine and application framework for Rust using Vulkan",
     link: "https://github.com/ten3roberts/ivy",
-    linkIcon: "../img/GitHub-Mark/PNG/GitHub-Mark-Light-64px.png",
+    linkIcon:
+      "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2Fd8%2F40%2Faf%2Fd840af0a8bfd882f834e9e1ddd11f5c4.jpg&f=1&nofb=1",
   },
   {
     title: "magpie",
@@ -48,8 +49,7 @@ function renderProject(parent, project) {
 
   // Link
   let link = document.createElement("button");
-  link.classList.add("block-button");
-  link.classList.add("float-end");
+  link.classList.add("block-button", "float-end");
   link.onclick = () => goto(project.link);
   article.appendChild(link);
 
@@ -77,12 +77,10 @@ function renderProjects() {
   }
 }
 
-window.onload = () => {
-  let container = document.getElementById("projects");
+let container = document.getElementById("projects");
 
-  if (container) {
-    renderProjects.call(container);
-  }
-};
+if (container) {
+  renderProjects.call(container);
+}
 
 console.log("Loaded js");

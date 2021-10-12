@@ -28,6 +28,10 @@ article {
   border-bottom: 1px solid;
 }
 
+span {
+  padding: inherit;
+}
+
 /* Classes */
 
 .inline-block {
