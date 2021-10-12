@@ -1,5 +1,6 @@
 body {
   font-family: "Open Sans", sans-serif;
+  background-image: linear-gradient(var(--bs-gray-900), #101214);
 }
 
 h2 {

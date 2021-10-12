@@ -1,6 +1,6 @@
 // Automatically generates a header for each page
 
-let header = {
+const header = {
   h1: "Tej Roberts",
   content: "A personal blog containing project I've developed over the years.",
   nav: [
@@ -36,7 +36,6 @@ function renderHeader() {
   nav.classList.add(
     "navbar",
     "navbar-expand",
-    "bg-dark",
     "justify-content-center",
   );
 

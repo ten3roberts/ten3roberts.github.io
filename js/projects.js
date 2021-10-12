@@ -1,4 +1,4 @@
-let projects = [
+const projects = [
   {
     title: "Ivy",
     description:
