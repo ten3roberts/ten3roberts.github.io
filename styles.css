@@ -21,12 +21,16 @@ a:hover {
   color: var(--bs-blue)
 }
 
-nav {
+header {
   border-bottom: 1px solid;
 }
 
+footer {
+  border-top: 1px solid;
+}
+
 article {
-  border-bottom: 1px solid;
+  border-bottom: 1px solid var(--bs-secondary);
 }
 
 span {

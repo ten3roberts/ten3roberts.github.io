@@ -20,10 +20,10 @@ function animateProjects() {
 }
 
 function animateNavbar() {
-  let target = document.getElementsByTag("nav")[0];
+  let target = document.getElementsByTagName("nav")[0];
   const coords = { width: 0 };
   const tween = new TWEEN.Tween(coords) // Create a new tween that modifies 'coords'.
-    .to({ width: 1 }, 5000)
+    .to({ width: 1 }, 1000)
     .easing(TWEEN.Easing.Quintic.Out)
     .onUpdate(() => {
       target.style.setProperty(

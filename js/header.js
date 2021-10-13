@@ -1,12 +1,18 @@
 // Automatically generates a header for each page
 
-const header = {
-  h1: "Tej Roberts",
-  content: "A personal blog containing project I've developed over the years.",
+const headerTemplate = {
+  title: "Tej Roberts",
+  content: "A personal blog containing projects I've developed over the years.",
+  navStyle: "button",
+  titleStyle: "h1",
   nav: [
     {
       title: "About",
       href: "html/projects/about.html",
+    },
+    {
+      title: "Projects",
+      href: "html/projects/projects.html",
     },
     {
       title: "Github",
@@ -21,16 +27,48 @@ const header = {
   ],
 };
 
-function renderHeader() {
+const footerTemplate = {
+  title: "Find me elsewhere …",
+  navStyle: "button",
+  titleStyle: "h4",
+  nav: [
+    {
+      title: "Email",
+      href: "mailto:ten3roberts@gmail.com",
+      icon:
+        "https://lh3.googleusercontent.com/0rpHlrX8IG77awQMuUZpQ0zGWT7HRYtpncsuRnFo6V3c8Lh2hPjXnEuhDDd-OsLz1vua4ld2rlUYFAaBYk-rZCODmi2eJlwUEVsZgg",
+    },
+    {
+      title: "Github",
+      href: "https://github.com/ten3roberts",
+      icon: "../img/GitHub-Mark/PNG/GitHub-Mark-Light-64px.png",
+    },
+    {
+      title: "Gitlab",
+      href: "https://gitlab.com/ten3roberts",
+      icon: "https://about.gitlab.com/images/icons/logos/slp-icon.svg",
+    },
+    {
+      title: "LinkedIn",
+      href: "https://www.linkedin.com/in/tim-roberts-b70a2b222",
+      icon:
+        "https://content.linkedin.com/content/dam/me/brand/en-us/brand-home/logos/In-Blue-Logo.png.original.png",
+    },
+  ],
+};
+
+function renderHeader(header) {
   let h1 = document.createElement("h1");
   h1.classList.add("mt-5", "text-center");
-  h1.textContent = header.h1;
+  h1.textContent = header.title;
   this.appendChild(h1);
 
-  let p = document.createElement("p");
-  p.classList.add("mt-2", "text-center");
-  p.textContent = header.content;
-  this.appendChild(p);
+  if (header.content) {
+    let p = document.createElement("p");
+    p.classList.add("mt-2", "text-center");
+    p.textContent = header.content;
+    this.appendChild(p);
+  }
 
   let nav = document.createElement("nav");
   nav.classList.add(
@@ -48,14 +86,18 @@ function renderHeader() {
 
   for (i = 0; i < header.nav.length; i++) {
     let item = header.nav[i];
-    let li = generateNavbarItem(item);
+    if (header.navStyle == "button") {
+      var li = generateButton(item);
+    } else {
+      var li = generateSpan(item);
+    }
 
     ul.appendChild(li);
   }
 }
 
 // Creates and returns a navbar li
-function generateNavbarItem(item) {
+function generateButton(item) {
   let li = document.createElement("li");
 
   li.classList.add("sep");
@@ -82,8 +124,42 @@ function generateNavbarItem(item) {
   return li;
 }
 
-let headers = document.getElementsByTagName("header");
+// Creates and returns a navbar li
+function generateSpan(item) {
+  let li = document.createElement("li");
 
-for (i = 0; i < headers.length; i++) {
-  renderHeader.call(headers[i]);
+  li.classList.add("sep", "mx-5");
+
+  let title = document.createElement("h4");
+  title.textContent = item.title + ":";
+
+  li.appendChild(title);
+
+  let a = document.createElement("a");
+  a.href = item.href;
+  a.textContent = item.href;
+
+  li.appendChild(a);
+
+  if (item.icon) {
+    console.log("Icon: ", item.icon);
+    let icon = document.createElement("img");
+    icon.classList.add("icon");
+    icon.src = item.icon;
+    a.appendChild(icon);
+  }
+
+  return li;
+}
+
+let header = document.getElementById("header");
+
+if (header) {
+  renderHeader.call(header, headerTemplate);
+}
+
+let footer = document.getElementById("footer");
+
+if (footer) {
+  renderHeader.call(footer, footerTemplate);
 }
