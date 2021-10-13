@@ -39,6 +39,8 @@ function renderProject(parent, project) {
   let article = document.createElement("article");
 
   parent.appendChild(article);
+  // parent.style.height = "200px";
+  // parent.style.overflow = "hidden";
 
   let title = document.createElement("h3");
   title.textContent = project.title;

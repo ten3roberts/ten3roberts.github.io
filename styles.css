@@ -33,6 +33,11 @@ span {
   padding: inherit;
 }
 
+#projects {
+  overflow: hidden;
+  transform-origin: top;
+}
+
 /* Classes */
 
 .inline-block {
