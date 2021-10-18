@@ -6,6 +6,10 @@ requestAnimationFrame(animate);
 
 function animateProjects() {
   let target = document.getElementById("projects");
+  if (target == null) {
+    return;
+  }
+
   const coords = { height: 0 };
   const tween = new TWEEN.Tween(coords) // Create a new tween that modifies 'coords'.
     .to({ height: 1 }, 1000)

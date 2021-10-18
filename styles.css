@@ -1,6 +1,13 @@
 body {
   font-family: "Open Sans", sans-serif;
-  background-image: linear-gradient(var(--bs-gray-900), #101214);
+  background-image: linear-gradient(180deg, var(--bs-gray-900), #101214);
+  background-size: 100%; 
+  background-repeat: no-repeat;
+  background-color: red;
+}
+
+html {
+  min-height: 100%;
 }
 
 h2 {
@@ -23,18 +30,43 @@ a:hover {
 
 header {
   border-bottom: 1px solid;
+  margin-bottom: 2em;
 }
 
 footer {
   border-top: 1px solid;
+  margin: auto;
+  /* position: absolute; */
+  /* bottom: 0; */
+  /* width: 100%; */
 }
 
 article {
+  padding-top: 1em;
   border-bottom: 1px solid var(--bs-secondary);
+  margin: auto;
+}
+
+.container {
+  min-height: 10em;
 }
 
 span {
   padding: inherit;
+}
+
+figure {
+  position: relative;
+}
+
+figcaption {
+  margin: auto;
+  text-align: center;
+  width: 70%;
+  font-size: 1.5em;
+  padding: 0.5em;
+  background-color: var(--bs-secondary);
+  border-radius: 0 0 30px 30px;
 }
 
 #projects {
@@ -51,7 +83,7 @@ span {
 .icon {
   display: inline-block;
   height: 1em;
-/* height: 100%; */
+  /* height: 100%; */
   width: auto;
 }
 
@@ -70,6 +102,15 @@ span {
   text-decoration: none;
 }
 
+.slideshow {
+  margin: auto;
+  width: 70%;
+  object-fit: fill;
+  background-color: var(--bs-secondary);
+  animation: slide 4s 1;
+  border-radius: 30px 30px 0 0;
+}
+
 .block-button:hover {
   background-color: var(--bs-purple);
   animation-duration: 100ms;
@@ -83,3 +124,9 @@ span {
 /* .sep:last-child::after { */
 /*   content: "" */
 /* } */
+
+@media print {
+  a {
+    content: attr(href);
+  }
+}

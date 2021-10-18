@@ -2,17 +2,22 @@
 
 const headerTemplate = {
   title: "Tej Roberts",
+  titleClick: () => goto("/index.html"),
   content: "A personal blog containing projects I've developed over the years.",
   navStyle: "button",
   titleStyle: "h1",
   nav: [
     {
       title: "About",
-      href: "html/projects/about.html",
+      href: "/html/about.html",
+    },
+    {
+      title: "Gallery",
+      href: "/html/gallery.html",
     },
     {
       title: "Projects",
-      href: "html/projects/projects.html",
+      href: "/index.html",
     },
     {
       title: "Github",
@@ -58,9 +63,14 @@ const footerTemplate = {
 };
 
 function renderHeader(header) {
-  let h1 = document.createElement("h1");
+  let h1 = document.createElement(header.titleStyle);
   h1.classList.add("mt-5", "text-center");
   h1.textContent = header.title;
+
+  if (header.titleClick) {
+    h1.onclick = header.titleClick;
+  }
+
   this.appendChild(h1);
 
   if (header.content) {
