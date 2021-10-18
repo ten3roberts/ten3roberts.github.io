@@ -24,4 +24,7 @@ function slideshow() {
 
   currentImage = (currentImage + 1) % images.length;
 }
+
+slideshow();
+
 setInterval(slideshow, 2000);

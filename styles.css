@@ -3,7 +3,6 @@ body {
   background-image: linear-gradient(180deg, var(--bs-gray-900), #101214);
   background-size: 100%; 
   background-repeat: no-repeat;
-  background-color: red;
 }
 
 html {
@@ -91,6 +90,11 @@ figcaption {
   display: inline-block;
   height: 3em;
   width: auto;
+}
+
+.current {
+  background-color: var(--bs-blue);
+  font-weight: bold;
 }
 
 .block-button {

@@ -62,6 +62,10 @@ const footerTemplate = {
   ],
 };
 
+function basename(str) {
+  return str.split("/").reverse()[0];
+}
+
 function renderHeader(header) {
   let h1 = document.createElement(header.titleStyle);
   h1.classList.add("mt-5", "text-center");
@@ -94,6 +98,7 @@ function renderHeader(header) {
 
   nav.appendChild(ul);
 
+  // Render navbar buttons
   for (i = 0; i < header.nav.length; i++) {
     let item = header.nav[i];
     if (header.navStyle == "button") {
@@ -102,6 +107,10 @@ function renderHeader(header) {
       var li = generateSpan(item);
     }
 
+    // If the item is the current page, highlight the button
+    if ((basename(item.href) == basename(window.location.href))) {
+      li.classList.add("current");
+    }
     ul.appendChild(li);
   }
 }
