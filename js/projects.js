@@ -7,7 +7,8 @@ const projects = [
   },
   {
     title: "ticketsystem",
-    description: "Proof of concert ticketing system for concerts using SQLite",
+    description:
+      "Proof of concept ticketing system for concerts using SQLite in C",
     link: "https://gitlab.com/ten3roberts/ticketsystem",
   },
   {
@@ -48,6 +49,7 @@ function renderProject(parent, project) {
   // parent.style.height = "200px";
   // parent.style.overflow = "hidden";
 
+  // Left part with title and description
   let left = document.createElement("div");
   article.appendChild(left);
 
@@ -62,6 +64,7 @@ function renderProject(parent, project) {
 
   left.appendChild(description);
 
+  // Right part with button icon
   let link = document.createElement("a");
   link.textContent = project.link;
   link.href = project.link;
@@ -86,13 +89,6 @@ function renderProject(parent, project) {
   icon.classList.add("fa", "fa-3x", iconName);
 
   button.appendChild(icon);
-
-  // if (project.linkIcon) {
-  //   let icon = document.createElement("img");
-  //   icon.src = project.linkIcon;
-  //   icon.classList.add("large-icon");
-  //   link.appendChild(icon);
-  // }
 }
 
 function renderProjects() {
