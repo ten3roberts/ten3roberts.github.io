@@ -90,8 +90,10 @@ function renderHeader(header) {
   let nav = document.createElement("nav");
   nav.classList.add(
     "navbar",
-    "navbar-expand",
+    "navbar-expand-md",
     "justify-content-center",
+    "flex-wrap",
+    "align-items-stretch",
   );
 
   this.appendChild(nav);
