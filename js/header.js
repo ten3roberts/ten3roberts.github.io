@@ -9,15 +9,15 @@ const headerTemplate = {
   nav: [
     {
       title: "About",
-      href: "/html/about.html",
+      href: "html/about.html",
     },
     {
       title: "Gallery",
-      href: "/html/gallery.html",
+      href: "html/gallery.html",
     },
     {
       title: "Projects",
-      href: "/index.html",
+      href: "index.html",
     },
     {
       title: "Github",
@@ -128,7 +128,15 @@ function generateButton(item) {
 
   let button = document.createElement("button");
   button.classList.add("block-button");
-  button.onclick = () => goto(item.href);
+
+  // Automatically go up one directory if current file is inside html/ and the item is not an external link
+  if (window.location.href.includes("html/") && !item.href.includes("http")) {
+    var href = "../" + item.href;
+  } else {
+    href = item.href;
+  }
+
+  button.onclick = () => goto(href);
 
   li.appendChild(button);
 

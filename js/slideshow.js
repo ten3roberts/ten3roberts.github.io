@@ -1,17 +1,20 @@
 let currentImage = 0;
 
 let images = [
-  { src: "/img/pbr.png", caption: "PBR rendering in Ivy game engine" },
-  { src: "/img/collision.png", caption: "GJK and EPA collision system in Ivy" },
+  { src: "../img/pbr.png", caption: "PBR rendering in Ivy game engine" },
   {
-    src: "/img/gizmos_dark.png",
+    src: "../img/collision.png",
+    caption: "GJK and EPA collision system in Ivy",
+  },
+  {
+    src: "../img/gizmos_dark.png",
     caption: "Gizmos system with darkened color when occluded",
   },
   {
-    src: "/img/light.png",
+    src: "../img/light.png",
     caption: "Visualization of light sources in post processing",
   },
-  { src: "/img/text_rendering.png", caption: "TTF text rendering" },
+  { src: "../img/text_rendering.png", caption: "TTF text rendering" },
 ];
 
 let frame = document.getElementById("slideshow");
