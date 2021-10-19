@@ -1,4 +1,5 @@
 let currentImage = 0;
+
 let images = [
   { src: "/img/pbr.png", caption: "PBR rendering in Ivy game engine" },
   { src: "/img/collision.png", caption: "GJK and EPA collision system in Ivy" },
@@ -14,17 +15,56 @@ let images = [
 ];
 
 let frame = document.getElementById("slideshow");
-let img = frame.children[0];
-let caption = frame.children[1];
+let img = document.getElementById("slideshow-image");
+let caption = document.getElementById("slideshow-caption");
+let indicator = document.getElementById("slideshow-indicator");
+
+let playing = true;
 
 function slideshow() {
-  let image = images[currentImage];
-  img.src = image.src;
-  caption.textContent = image.caption;
+  if (playing) {
+    nextImage();
+  }
+}
+
+function nextImage() {
+  setImage();
 
   currentImage = (currentImage + 1) % images.length;
 }
 
-slideshow();
+function prevImage() {
+  setImage();
 
-setInterval(slideshow, 2000);
+  currentImage = (currentImage + images.length - 1) % images.length;
+}
+
+function setImage() {
+  let image = images[currentImage];
+  img.src = image.src;
+  caption.textContent = image.caption;
+}
+
+// Pause the slideshow when navigating manually
+function stopSlideshow() {
+  playing = false;
+  updateIndicator();
+}
+
+function toggleSlideshow() {
+  playing = !playing;
+  updateIndicator();
+}
+
+// Update play pause indicator
+function updateIndicator() {
+  if (playing) {
+    indicator.classList = "fa fa-pause";
+  } else {
+    indicator.classList = "fa fa-play";
+  }
+}
+
+nextImage();
+
+setInterval(slideshow, 2500);

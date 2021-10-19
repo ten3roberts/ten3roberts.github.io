@@ -4,33 +4,33 @@ const projects = [
     description:
       "Modular game engine and application framework for Rust using Vulkan",
     link: "https://github.com/ten3roberts/ivy",
-    linkIcon: "../img/GitHub-Mark/PNG/GitHub-Mark-Light-64px.png",
+  },
+  {
+    title: "ticketsystem",
+    description: "Proof of concert ticketing system for concerts using SQLite",
+    link: "https://gitlab.com/ten3roberts/ticketsystem",
   },
   {
     title: "magpie",
     description:
       "Single header runtime memory leak detection and memory validation library",
     link: "https://github.com/ten3roberts/magpie",
-    linkIcon: "../img/GitHub-Mark/PNG/GitHub-Mark-Light-64px.png",
   },
   {
     title: "manta",
     description: "Vulkan rendering engine in C99",
     link: "https://github.com/ten3roberts/manta",
-    linkIcon: "../img/GitHub-Mark/PNG/GitHub-Mark-Light-64px.png",
   },
   {
     title: "libjson",
     description: "Single header DOM json serializer and deserializer in C99",
     link: "https://github.com/ten3roberts/libjson",
-    linkIcon: "../img/GitHub-Mark/PNG/GitHub-Mark-Light-64px.png",
   },
   {
     title: "toggle.nvim",
     description:
       "Neovim plugin for toggling between true, false, and other different sets of values",
     link: "https://github.com/ten3roberts/toggle.nvim",
-    linkIcon: "../img/GitHub-Mark/PNG/GitHub-Mark-Light-64px.png",
   },
 ];
 
@@ -38,34 +38,61 @@ function renderProject(parent, project) {
   let article = document.createElement("article");
 
   parent.appendChild(article);
+  article.classList.add(
+    "d-flex",
+    "flex-xl-row",
+    "justify-content-between",
+    "align-items-center",
+  );
+  article.style.minHeight = "10em";
   // parent.style.height = "200px";
   // parent.style.overflow = "hidden";
+
+  let left = document.createElement("div");
+  article.appendChild(left);
 
   let title = document.createElement("h3");
   title.textContent = project.title;
 
-  article.appendChild(title);
-
-  article.style.minHeight = "10em";
-
-  // Link
-  let link = document.createElement("button");
-  link.classList.add("block-button", "float-end");
-  link.onclick = () => goto(project.link);
-  article.appendChild(link);
-
-  if (project.linkIcon) {
-    let icon = document.createElement("img");
-    icon.src = project.linkIcon;
-    icon.classList.add("large-icon");
-    link.appendChild(icon);
-  }
+  left.appendChild(title);
 
   // Description
   let description = document.createElement("p");
   description.textContent = project.description ? project.description : "";
 
-  article.appendChild(description);
+  left.appendChild(description);
+
+  let link = document.createElement("a");
+  link.textContent = project.link;
+  link.href = project.link;
+  left.appendChild(link);
+
+  // Link
+  let button = document.createElement("button");
+  button.classList.add("block-button");
+  button.onclick = () => goto(project.link);
+  button.value = project.link;
+  article.appendChild(button);
+
+  let icon = document.createElement("i");
+
+  // Automatically choose icon based on project link
+  let iconName = project.link.includes("github.com")
+    ? "fa-github"
+    : project.link.includes("gitlab.com")
+    ? "fa-gitlab"
+    : "fa-archive";
+
+  icon.classList.add("fa", "fa-3x", iconName);
+
+  button.appendChild(icon);
+
+  // if (project.linkIcon) {
+  //   let icon = document.createElement("img");
+  //   icon.src = project.linkIcon;
+  //   icon.classList.add("large-icon");
+  //   link.appendChild(icon);
+  // }
 }
 
 function renderProjects() {

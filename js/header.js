@@ -22,12 +22,12 @@ const headerTemplate = {
     {
       title: "Github",
       href: "https://github.com/ten3roberts",
-      icon: "../img/GitHub-Mark/PNG/GitHub-Mark-Light-64px.png",
+      faicon: "github",
     },
     {
       title: "Gitlab",
       href: "https://gitlab.com/ten3roberts",
-      icon: "https://about.gitlab.com/images/icons/logos/slp-icon.svg",
+      faicon: "gitlab",
     },
   ],
 };
@@ -40,24 +40,22 @@ const footerTemplate = {
     {
       title: "Email",
       href: "mailto:ten3roberts@gmail.com",
-      icon:
-        "https://lh3.googleusercontent.com/0rpHlrX8IG77awQMuUZpQ0zGWT7HRYtpncsuRnFo6V3c8Lh2hPjXnEuhDDd-OsLz1vua4ld2rlUYFAaBYk-rZCODmi2eJlwUEVsZgg",
+      faicon: "envelope",
     },
     {
       title: "Github",
       href: "https://github.com/ten3roberts",
-      icon: "../img/GitHub-Mark/PNG/GitHub-Mark-Light-64px.png",
+      faicon: "github",
     },
     {
       title: "Gitlab",
       href: "https://gitlab.com/ten3roberts",
-      icon: "https://about.gitlab.com/images/icons/logos/slp-icon.svg",
+      faicon: "gitlab",
     },
     {
       title: "LinkedIn",
       href: "https://www.linkedin.com/in/tim-roberts-b70a2b222",
-      icon:
-        "https://content.linkedin.com/content/dam/me/brand/en-us/brand-home/logos/In-Blue-Logo.png.original.png",
+      faicon: "linkedin",
     },
   ],
 };
@@ -68,7 +66,7 @@ function basename(str) {
 
 function renderHeader(header) {
   let h1 = document.createElement(header.titleStyle);
-  h1.classList.add("mt-5", "text-center");
+  h1.classList.add("mt-4", "text-center");
   h1.textContent = header.title;
 
   if (header.titleClick) {
@@ -132,6 +130,13 @@ function generateButton(item) {
     let icon = document.createElement("img");
     icon.classList.add("icon");
     icon.src = item.icon;
+    button.appendChild(icon);
+  }
+
+  if (item.faicon) {
+    console.log("Icon: ", item.icon);
+    let icon = document.createElement("i");
+    icon.classList.add("fa", "fa-" + item.faicon);
     button.appendChild(icon);
   }
 
