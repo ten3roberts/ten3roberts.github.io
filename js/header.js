@@ -61,7 +61,12 @@ const footerTemplate = {
 };
 
 function basename(str) {
-  return str.split("/").reverse()[0];
+  let basename = str.split("/").reverse()[0];
+  if (basename == "") {
+    return "index.html";
+  } else {
+    return basename;
+  }
 }
 
 function renderHeader(header) {
