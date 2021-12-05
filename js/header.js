@@ -1,7 +1,7 @@
 // Automatically generates a header for each page
 
 const headerTemplate = {
-  title: "Tej Roberts",
+  title: "Tei Roberts",
   titleClick: () => goto("/index.html"),
   content: "A personal blog containing projects I've developed over the years.",
   navStyle: "button",

@@ -1,5 +1,5 @@
 {
-  "name": "tejroberts",
+  "name": "ten3roberts.github.io",
   "version": "1.0.0",
   "description": "Personal blog",
   "main": "index.js",
@@ -9,7 +9,7 @@
   "keywords": [
     "Blog"
   ],
-  "author": "Tej Roberts",
+  "author": "Tei Roberts",
   "license": "MIT",
   "dependencies": {
     "@tweenjs/tween.js": "^18.6.4"
