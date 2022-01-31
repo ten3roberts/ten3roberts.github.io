@@ -13,7 +13,7 @@ const projects = [
   {
 
     title : "hecs-hierarchy",
-    description : "Hierarchy implementation for declaring relationships between nodes",
+    description : "Hierarchy implementation for declaring relationships between entities",
     link: "https://github.com/ten3roberts/hecs-hierarchy"
   },
   {
