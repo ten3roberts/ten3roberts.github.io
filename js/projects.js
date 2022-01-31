@@ -14,7 +14,7 @@ const projects = [
 
     title : "hecs-hierarchy",
     description : "Hierarchy implementation for declaring relationships between nodes",
-    link: "https://github.com/ten3roberts/hecs-schedule"
+    link: "https://github.com/ten3roberts/hecs-hierarchy"
   },
   {
     title: "bsp-pathfinding",
