@@ -15,6 +15,8 @@ let images = [
     caption: "Visualization of light sources in post processing",
   },
   { src: "../img/text_rendering.png", caption: "TTF text rendering" },
+  { src: "../img/path1.png", caption: "Path finding using BSP" },
+  { src: "../img/path2.png", caption: "Path finding using BSP" },
 ];
 
 let frame = document.getElementById("slideshow");

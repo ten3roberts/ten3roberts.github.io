@@ -6,6 +6,22 @@ const projects = [
     link: "https://github.com/ten3roberts/ivy",
   },
   {
+    title: "hecs-schedule",
+    description: "Workload executor for parallel system execution for hecs",
+    link: "https://github.com/ten3roberts/hecs-schedule"
+  },
+  {
+
+    title : "hecs-hierarchy",
+    description : "Hierarchy implementation for declaring relationships between nodes",
+    link: "https://github.com/ten3roberts/hecs-schedule"
+  },
+  {
+    title: "bsp-pathfinding",
+    description: "Path finding and search space generation using Binary Spatial Partitioning",
+    link: "https://github.com/ten3roberts/bsp-pathfinding",
+  },
+  {
     title: "ticketsystem",
     description:
       "Proof of concept ticketing system for concerts using SQLite in C",
