@@ -1,6 +1,7 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
+    Greetings traveler, my name is Freja Roberts. I am primarily a game and game engine
+    developer.
   </div>
 </template>
 
