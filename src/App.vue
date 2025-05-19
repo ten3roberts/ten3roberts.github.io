@@ -30,9 +30,9 @@ import Social from './components/Social.vue'
 
 <style scoped>
 header {
-  background-color: #333;
+  background-color: var(--color-surface-tertiary);
   color: white;
-  padding: 1rem;
+  padding: 1.5rem;
   display: block;
   width: 100%;
 }
@@ -48,7 +48,7 @@ header {
 
 .content-view {
   padding: 2rem;
-  background-color: #222;
+  background-color: var(--color-surface-secondary);
 }
 
 .nav-wrapper {

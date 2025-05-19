@@ -1,6 +1,8 @@
 <script setup>
-import { defineProps } from 'vue'
-defineProps(['name','description','image','link'])
+  import { defineProps } from 'vue'
+const { links } = defineProps(['name','description','image','links'])
+
+console.log("links", links)
 
 function getImageUrl(name) {
   // note that this does not include files in subdirectories
@@ -15,13 +17,19 @@ function getImageUrl(name) {
       <div class="flex">
         <h2>{{ name }}</h2>
         <p
-          v-for="line in description"
-          :key="line"
+        v-for="line in description"
+        :key="line"
         >
-          {{line}}
+        {{line}}
         </p>
         <div class="bottom-line">
-          <a :href="link">Github</a>
+          <ul>
+            <template v-for="(link) in links" :key="link">
+              <li>
+                <a :href="link[1]">{{ link[0] }}</a>
+              </li>
+            </template>
+          </ul>
         </div>
       </div>
     </div>
@@ -38,7 +46,28 @@ function getImageUrl(name) {
 .flex {
   display: flex;
   flex-direction: column;
-  padding: 0.5rem;
+  padding: 8px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  align-items: left;
+  display: flex;
+}
+
+li:nth-child(n+2):before {
+    content: "|";
+    margin-right: 8px;
+    color: var(--stone-700);
+}
+
+li {
+  margin: 0;
+  margin-right: 8px;
+  padding: 0;
+  display: inline-block;
 }
 
 .bottom-line {

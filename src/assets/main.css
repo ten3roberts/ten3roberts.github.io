@@ -10,18 +10,24 @@
 a,
 .green {
   text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
+  color: var(--color-element-accent);
+  transition: 0.1s;
+  padding: 0px;
+  corner-radius: 4px;
+}
+
+.muted {
+  text-decoration: none;
+  color: var(--color-element-secondary);
   transition: 0.1s;
   padding: 3px;
   corner-radius: 3px;
 }
 
-.muted {
+.plain-link {
   text-decoration: none;
-  color: #bbb;
+  color: var(--color-text);
   transition: 0.1s;
-  padding: 3px;
-  corner-radius: 3px;
 }
 
 p {
@@ -33,15 +39,31 @@ h1 {
 }
 
 .card {
-  background-color: #282828;
-  padding: 1.5rem;
-  margin: 1rem 1rem;
+  background-color: var(--color-surface-tertiary);
+  padding: 8px;
+  margin: 8px;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
 }
 
+.muted-button {
+  background-color: var(--stone-700);
+  color: var(--color-element-primary);
+  border: none;
+  padding: 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 8px;
+}
+
+.muted-button:hover {
+  background-color: var(--stone-600);
+}
+
+
 @media (hover: hover) {
   a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
+    background-color: var(--color-surface-accent);
     corner-radius: 100%;
   }
 }

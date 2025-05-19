@@ -37,9 +37,9 @@ const socials=[
         v-for="social in socials"
         :key="social.name"
       >
-        <component :is="social.icon" />
+        <component :is="social.icon" class="icon"/>
         <a
-          class="muted"
+          class="plain-link"
           :href="social.url"
         >{{ social.name }}</a>
 
@@ -54,7 +54,7 @@ ul {
   list-style-type: none;
   padding: 0;
   display: flex;
-  gap: 0.5rem;
+  gap: 8px;
 }
 
 li {
@@ -64,9 +64,7 @@ li {
 }
 
 .icon {
-  width: 0.8rem;
-  height: 0.8rem;
-  margin-right: 0.1rem;
+  margin-right: 4px;
 }
 
 .tooltip {
