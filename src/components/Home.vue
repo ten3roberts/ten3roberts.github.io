@@ -18,7 +18,7 @@ import Projects from './Projects.vue'
     </div>
     <div tag="projects">
       <h2>Projects</h2>
-      <a href="/projects">View All</a>
+      <RouterLink to="/projects">View All</RouterLink>
       <Projects />
     </div>
   </div>
