@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { RouterLink,RouterView } from 'vue-router'
+  import { RouterLink,RouterView } from 'vue-router'
 
 import Social from './components/Social.vue'
 </script>
@@ -8,7 +8,10 @@ import Social from './components/Social.vue'
   <header>
     <div class="header-row">
       <div>
-        <h1>Freja Roberts </h1>
+
+        <h1>
+          <RouterLink to="/">Freja Roberts</RouterLink>
+        </h1>
         <div class="nav-wrapper">
           <nav>
             <RouterLink to="/">Home</RouterLink>
@@ -32,7 +35,7 @@ import Social from './components/Social.vue'
 header {
   background-color: var(--color-surface-tertiary);
   color: white;
-  padding: 1.5rem;
+  padding: 18px;
   display: block;
   width: 100%;
 }
@@ -62,16 +65,16 @@ nav {
   gap: 1rem;
 }
 
-@media (max-width: 600px) {
-  .header-row {
-    flex-direction: column;
+  @media (max-width: 600px) {
+    .header-row {
+      flex-direction: column;
+    }
+    .header-end {
+      margin-left: 0;
+      align-self: unset;
+    }
+    nav a {
+      margin-bottom: 0.5rem;
+    }
   }
-  .header-end {
-    margin-left: 0;
-    align-self: unset;
-  }
-  nav a {
-    margin-bottom: 0.5rem;
-  }
-}
 </style>

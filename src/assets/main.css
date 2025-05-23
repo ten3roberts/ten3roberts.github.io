@@ -16,6 +16,10 @@ a,
   corner-radius: 4px;
 }
 
+h1 a {
+  color: var(---color-text);
+}
+
 .muted {
   text-decoration: none;
   color: var(--color-element-secondary);

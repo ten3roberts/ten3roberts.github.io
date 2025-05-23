@@ -6,7 +6,7 @@ import Projects from './Projects.vue'
   <div>
     <div tag="about">
       <p>
-        Greetings, I'm Freja.
+        Greetings traveler, I'm Freja.
       </p>
       <p>
         I make games, game engines, and a plethora of other libaries around game development.
