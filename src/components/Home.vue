@@ -12,7 +12,7 @@ import Projects from './Projects.vue'
         I make games, game engines, and a plethora of other libaries around game development.
       </p>
       <p>
-        Mostly, I prefer working on a lower level, wether that be hacking away on my game engine <a href="https://github.com/ten3roberts/ivy">Ivy</a> and writing a custom gpu driven renderer, or working
+        Mostly, I prefer working on a lower level, whether that be hacking away on my game engine <a href="https://github.com/ten3roberts/ivy">Ivy</a> and writing a custom gpu driven renderer, or working
         on a smaller library to test an idea I had.
       </p>
     </div>
